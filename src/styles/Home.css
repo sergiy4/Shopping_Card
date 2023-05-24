@@ -1,0 +1,56 @@
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;900&display=swap');
+
+/*    background-color: rgb(255, 37, 88);
+    color:rgb(199, 15, 70); */
+    
+.Start_screen{
+    
+    background-color: rgb(37, 255, 164);
+    /* background-color: rgb(255, 244, 231); */
+    height: 85%;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+   
+}
+
+
+.Home_text_block{
+    height: 80%;
+    width: 90%;
+
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    position: relative;
+
+    font-size: 30px;
+
+    background-color: rgb(37, 255, 164);
+    color:rgb(11, 173, 87);
+    /* color:rgb(15, 199, 101); */
+    transform-style: preserve-3d;
+    /* text-shadow: 6px 3px 1px rgb(0, 0, 0) */
+}
+.Shop_Btn{
+    margin-top: 40px;
+    height: 90px;
+    width: 200px;
+    transform-style: preserve-3d;
+    z-index: 999;
+   cursor: pointer;
+   font-size: 20px;
+   letter-spacing: 6px;
+   background-color: #ddd;
+}
+
+.block{
+
+    z-index: 1;
+  
+}

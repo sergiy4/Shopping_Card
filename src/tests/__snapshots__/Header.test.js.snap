@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing Header component correct render 1`] = `
+<DocumentFragment>
+  <header>
+    <h1>
+      FakePlants
+    </h1>
+    <ul>
+      <li>
+        Shop
+      </li>
+      <li>
+        Contact
+      </li>
+      <li>
+        Shopping cart
+      </li>
+    </ul>
+  </header>
+</DocumentFragment>
+`;

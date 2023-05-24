@@ -1,0 +1,23 @@
+.header_stick{
+    
+    font-family: 'Raleway', sans-serif;
+
+    background-color: rgb(37, 255, 164);
+    color:rgb(11, 173, 87);
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform-style: preserve-3d;
+    
+}
+.name_shop{
+    cursor: pointer;
+    
+}
+.list{
+    list-style: none;
+    display: flex;
+    gap:40px;
+       
+}

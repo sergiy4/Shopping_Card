@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing HomePages renders 1`] = `
+<DocumentFragment>
+  <main
+    class="Start_screen"
+  >
+    <div
+      class="Home_text_block"
+    >
+      <div
+        class="block"
+      >
+        <div
+          style="opacity: 0.5; transform: none;"
+        >
+          <h1
+            class="Main_text"
+            style="transform: none;"
+          >
+            <span
+              class="Main_span first_spain"
+            >
+              Good
+            </span>
+             
+            <br />
+             Plant - good 
+            <br />
+            <span
+              class="Main_span"
+            >
+              Mood
+            </span>
+          </h1>
+          <button
+            class="Shop_Btn"
+            style="box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1);"
+          >
+            Shop
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</DocumentFragment>
+`;
