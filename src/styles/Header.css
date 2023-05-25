@@ -12,6 +12,7 @@
     
 }
 .name_shop{
+    position: relative;
     cursor: pointer;
     
 }
@@ -19,5 +20,18 @@
     list-style: none;
     display: flex;
     gap:40px;
+    
        
 }
+.list > *{
+    position: relative;
+    font-weight: 600;
+    font-size: 20px;
+    text-shadow: 0px 0px 0px rgb(0, 0, 0);
+    /* transition: text-shadow 0.5s ease;
+    transform-style: preserve-3d; */
+}
+/* .list > *:hover{
+    
+    text-shadow: 2px 3px 0px rgb(0, 0, 0);
+} */

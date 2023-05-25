@@ -19,7 +19,9 @@
    
 }
 
-
+.Main_text{
+    position: relative;
+}
 .Home_text_block{
     height: 80%;
     width: 90%;
@@ -47,10 +49,19 @@
    font-size: 20px;
    letter-spacing: 6px;
    background-color: #ddd;
+   position: relative;
+   /* position: absolute; */
 }
 
 .block{
-
+  
     z-index: 1;
   
 }
+/* .rel{
+    background-color: aqua;
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+} */
