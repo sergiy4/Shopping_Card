@@ -32,11 +32,11 @@ function Home(){
         },
         
     })
-// 
+
 
     const [textStyle, set] = useSpring(() => ({translateZ:'0px',textShadow:'0px 0px 0px  rgb(0, 0, 0)',top:'0%',left:'0%'}));
     const [btnStyle, setShadow] = useSpring(() => ({boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)', top:'0%',left:'0%'}));
-    // const [{textShadow}, setTextShadow] = useSpring(() => ({textShadow:'0px 0px 0px 0px rgb(0, 0, 0)'}));
+
     return(
         <main className="Start_screen">
             <div  className="Home_text_block" >

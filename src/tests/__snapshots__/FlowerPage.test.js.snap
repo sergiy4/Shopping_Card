@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing FlowerPage correctly render FlowerPage 1`] = `
+<DocumentFragment>
+  <main
+    class="flower_main"
+  >
+    <div
+      class="left_part"
+    >
+      <img
+        alt="plant"
+        class="img_plant"
+        src="AsparagusFern.jpg"
+      />
+    </div>
+    <div
+      class="right_part"
+    >
+      <h1 />
+      <h3 />
+      <button>
+        BUY
+      </button>
+    </div>
+  </main>
+</DocumentFragment>
+`;

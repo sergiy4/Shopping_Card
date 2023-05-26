@@ -5,6 +5,7 @@ import { Link, HashRouter, BrowserRouter, Route, Routes,useLocation } from 'reac
 import Home from './components/HomePage';
 import Header from './components/HeaderComponent';
 import ShopPage from './components/ShopPage';
+import FlowerPage from './components/FlowerPage';
 // const About = () => <div>You are on the about page</div>
 // const Home = () => <div>You are home</div>
 // const NoMatch = () => <div>No match</div>
@@ -20,7 +21,7 @@ export function App() {
   return (
     <>
     <Header/>
-      <ShopPage/>
+    <FlowerPage/>
     </>
   )
   

@@ -2,7 +2,7 @@ import { useRef, useState } from "react"
 import { plantsData } from "../data/PlantsListData"
 import { useSpring, useSprings, animated } from "@react-spring/web"
 import '../styles/ShopPage.css'
-import useIntersectionObserver from "../myHooks/IntersectionObserver";
+
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 function ShopPage(){
@@ -26,15 +26,19 @@ function ShopPage(){
                     left:'0%',
                 },
                 to:{
-                    boxShadow: i=== index?'10px 10px 0px 0px rgb(0, 0, 0)':'0px 0px 0px 0px rgb(0, 0, 0)',
-                    top: i=== index?'-3%': '0%',
-                    left: i=== index?'-3%':'0%',
+
+                    boxShadow: i === index? '10px 10px 0px 0px rgb(0, 0, 0)':'0px 0px 0px 0px rgb(0, 0, 0)' ,
+                   
+
+                    top: i=== index? '-3%':'0%' ,
+                    left: i=== index? '-3%':'0%',
     
                 }
             }
         ))
     )
 
+    
 
     return(
        <main className="Shop_Main">
@@ -47,13 +51,15 @@ function ShopPage(){
                 )=>(
                     
                     <div key={i}   className="card" >  
-                        <img src={plantsData[i].picture} className="img_card"></img>
+                        <img src={plantsData[i].picture} className="img_card" alt="plant"></img>
                         <div className="info_part_card">
 
                             <h2>{plantsData[i].name}</h2>
                             <h4>Price : {` ${plantsData[i].price} $`}</h4>
+
                             <div className="buttons">
                                 <div className="btn_around"
+
                                     onMouseEnter={()=>{
                                         setIndex(i);
                                         setViewBtn(true)
@@ -61,14 +67,16 @@ function ShopPage(){
                                     }}
                                     onMouseLeave={()=>{
                                         setIndex(null)
-                                    
                                         setViewBtn(false)
+                                       
+                                        
+                                        
                                         
                                     }}
                                 >
                                 <animated.button 
                                     className="Card_Btn"
-                                    style={viewBtn ?{ boxShadow,top,left}: null}
+                                    style={!viewBtn? { boxShadow,top,left}:null}
                                     
                                 >VIEW</animated.button>
                                 </div>
@@ -89,9 +97,7 @@ function ShopPage(){
                                 <animated.button 
 
                                     className="Card_Btn"
-
-                                    style={ BuyBtn ?{ boxShadow,top,left}: null}
-                                    // (BuyBtn && !viewBtn)
+                                    style={BuyBtn ? { boxShadow,top,left}:null}
                                     
                                 >BUY</animated.button>
                                </div>
@@ -106,5 +112,5 @@ function ShopPage(){
        </main>
     )
 }
-// style={headerStyle}
+
 export default ShopPage

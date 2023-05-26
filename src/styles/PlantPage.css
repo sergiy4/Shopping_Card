@@ -1,0 +1,71 @@
+.plant_main{
+    height: 85%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item{
+    position: relative;
+    height:100%;
+    width: 100%;
+    /* padding: 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:rgb(11, 173, 87);
+    background-color: rgb(37, 255, 164);
+    /* box-shadow: 20px 20px 0px 0px rgb(0,0,0); */
+    border: 3px solid black ;
+}
+.Around_item{
+    height: 80%;
+    width: 60%;
+   
+    padding-right: 9px;
+    padding-bottom: 9px;
+}
+.img_plant{
+    height: 100%;
+    width: 50%;
+    object-fit: contain;
+    background-color: white;
+    border-right: 3px solid black;
+}
+
+.btn_buy{
+    position: relative;
+    
+    height: 60px;
+    width: 120px;
+    background-color:#ddd ;
+    border-radius: 0;
+    letter-spacing: 6px;
+}
+.Info{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    
+    
+}
+.right_part{
+    
+    display: flex;
+    flex-direction: column;
+    gap:30px
+}
+.text{
+    position: relative;
+}
+.around_btn{
+    position: relative;
+    padding-right: 15px;
+    padding-bottom: 15px;
+   
+    height: 100%;
+    width: 120px;
+}
