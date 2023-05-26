@@ -1,0 +1,68 @@
+.Shop_Main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(226, 255, 237);
+}
+
+.area_cards{
+    /* display: flex;
+    flex-wrap: wrap; */
+   padding: 100px;
+    /* background-color: aqua; */
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:70px
+    /* width: 70%; */
+}
+
+.card{
+    position: relative;
+    height: 550px;
+    width: 400px ;
+    border: 3px solid black;
+    box-sizing:border-box;
+    overflow: hidden;
+}
+.img_card{
+    height: 70%;
+    width: 100%;
+    object-fit: contain;
+   
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.info_part_card{
+    border-top: 3px solid black;
+    box-sizing: border-box;
+    height: 30%;
+    background-color: rgb(37, 255, 164);
+    color:rgb(11, 173, 87);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:8px;
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.btn_around{
+   
+    padding-right: 10px;
+    padding-bottom: 10px;
+    
+}
+.Card_Btn{
+    cursor: pointer;
+    position: relative;
+    height: 50px;
+    width: 100px;
+    letter-spacing: 4px;
+    border-radius: 0;
+}

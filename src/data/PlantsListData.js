@@ -22,11 +22,7 @@ export const  plantsData = [
         name:'Asparagus Fern',
         price: 17
     },
-    {
-        picture:CalatheaOrnata,
-        name:'Calathea Ornata',
-        price: 16
-    },
+ 
     {
         picture:Orchid,
         name:'Orchid',
@@ -69,3 +65,8 @@ export const  plantsData = [
     }
 ]
 
+//    {
+//     picture:CalatheaOrnata,
+//     name:'Calathea Ornata',
+//     price: 16
+// },
