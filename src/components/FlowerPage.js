@@ -5,26 +5,37 @@ import '../styles/PlantPage.css'
 function FlowerPage(props){
 
     const {imgPlant,name,price} = props
-    const [itemStyle, setItemStyle] = useSpring(() => ({boxShadow:'0px 0px 0px  rgb(0, 0, 0)',top:'0%',left:'0%'}));
-    const [BtnStyle,setBtnStyle] = useSpring(()=> ({boxShadow:'0px 0px 0px  rgb(0, 0, 0)',top:'0%',left:'0%'}))
+    
+    const [itemStyle, setItemStyle] = useSpring(() => ({boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'}));
+    const [BtnStyle,setBtnStyle] = useSpring(()=> ({boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'}))
+    
     const [textStyle, set] = useSpring(() => ({textShadow:'0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'}));
+    const handleMouseEnter = () =>{
+        setItemStyle({
+            boxShadow:'15px 15px 0px 0px rgb(0, 0, 0)',
+            top:'-2.7%',
+            left:'-2.7%' 
+        })
+    }
 
+    const handleMouseLeave = ()=>{
+        setItemStyle({
+            boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',
+            top:'0%',
+            left:'0%'
+        })
+    }
     return(
 
        <main className='plant_main'>
             <div className='Around_item'
-                onMouseEnter={()=>{
-                    setItemStyle({boxShadow:'15px 15px 0px 0px rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
-                        
-                }
-                }   
-                onMouseLeave={()=>{
-                    setItemStyle({boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'})
-                    
-                }
-                }
+                onMouseEnter={handleMouseEnter}
+                 
+                onMouseLeave={handleMouseLeave}
             >
-                <animated.div   className='item' style={itemStyle} >
+            
+                <animated.div   className='item' style={itemStyle}> 
+                
                     <img src={Chinese} alt='plant' className='img_plant'></img>
                     <div className='Info'>
                         <div className='right_part'>
