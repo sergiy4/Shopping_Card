@@ -15,18 +15,21 @@ export const  plantsData = [
     {
         picture: aglonema,
         name:'Chinese Evergreen',
-        price: 17
+        price: 17,
+       
     },
     {
         picture:AsparagusFern,
         name:'Asparagus Fern',
-        price: 17
+        price: 17,
+        
     },
  
     {
         picture:Orchid,
         name:'Orchid',
-        price:65
+        price:65,
+        
     },
     {
         picture:PeaceLily,
