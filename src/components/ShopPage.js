@@ -4,6 +4,7 @@ import { useSpring, useSprings, animated } from "@react-spring/web"
 import '../styles/ShopPage.css'
 
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import { Link } from "react-router-dom"
 
 function ShopPage(props){
 
@@ -86,11 +87,17 @@ function ShopPage(props){
                                         
                                     }}
                                 >
+                                <Link to={`/shop/${plantsData[i].name}`} state={{
+                                    imgPlant:plantsData[i].picture,
+                                    name:plantsData[i].name,
+                                    price:plantsData[i].price
+                                }}>
                                 <animated.button 
                                     className="Card_Btn"
                                     style={viewBtn? { boxShadow,top,left}:null}
                                     
                                 >VIEW</animated.button>
+                                </Link>
                                 </div>
                                 <div
                                     className="btn_around"

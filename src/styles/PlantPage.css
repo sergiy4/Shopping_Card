@@ -54,6 +54,12 @@
 }
 .right_part{
     
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.forPosition{
+    width: 60%;
     display: flex;
     flex-direction: column;
     gap:30px

@@ -39,8 +39,15 @@
     transform-style: preserve-3d;
     /* text-shadow: 6px 3px 1px rgb(0, 0, 0) */
 }
-.Shop_Btn{
+.Around_shop_button{
+    width: 202px;
+    padding-bottom: 18px;
     margin-top: 40px;
+    
+   padding-right: 10px;
+}
+.Shop_Btn{
+    /* margin-top: 40px; */
     height: 90px;
     width: 200px;
     transform-style: preserve-3d;

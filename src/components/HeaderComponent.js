@@ -2,6 +2,7 @@ import React from "react";
 import '../styles/Header.css';
 import { animated,useSpring, useSprings } from "@react-spring/web";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 function Header(){
@@ -10,13 +11,16 @@ function Header(){
 
     const data = [
         {
-            name:'Shop'
+            name:'Shop',
+            link:'/shop'
         },
         {
-            name:'Contact'
+            name:'Contact',
+            link:'/sdf'
         },
         {
-            name:'Shopping Card'
+            name:'Shopping Card',
+            link:'/shopping_card'
         }
     ]
 
@@ -50,7 +54,7 @@ function Header(){
                 onMouseEnter={()=>set({textShadow:'3px 3px 0px rgb(0, 0, 0)',top:'-2.7%',left:'-1%'})}
                 onMouseLeave={()=>set({textShadow:'0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'})}
             >
-                FakePlants
+                <Link to='/' style={{ textDecoration: 'none' , color:'rgb(11, 173, 87)'}}>FakePlants</Link>
             </animated.h1>
 
             <ul className="list">
@@ -70,7 +74,8 @@ function Header(){
                             key={i}
                             style={styleUl}
                         >
-                            {data[i].name}
+                            
+                            <Link  style={{ textDecoration: 'none' ,color:'rgb(11, 173, 87)'}} to={`${data[i].link}`}>{data[i].name}</Link>
                         </animated.li>
                     )
 

@@ -98,7 +98,7 @@ describe('testing shopping gard component',()=>{
             
         })
 
-        render(<ShoppingCard increment={fakeIncrement} plants={data}/>)
+        const {rerender} = render(<ShoppingCard increment={fakeIncrement} plants={data}/>)
         
         
         let allPrice = ((data[0].count +1) * data[0].price)+
@@ -108,10 +108,15 @@ describe('testing shopping gard component',()=>{
 
        
         await user.click(btnIncrements[0]);
+        render(<ShoppingCard increment={fakeIncrement} plants={data} />)
+     
         await user.click(btnIncrements[1]);
+        render(<ShoppingCard increment={fakeIncrement} plants={data}/>)
        
         expect(fakeIncrement).toBeCalledTimes(2)
-        expect(screen.getByTestId('allSum')).toHaveTextContent(`${allPrice}`)
+
+        const h1s = screen.getAllByTestId('allSum')
+        expect(h1s[2]).toHaveTextContent(`${allPrice}`)
         
         
     })
@@ -149,10 +154,16 @@ describe('testing shopping gard component',()=>{
 
        
         await user.click(btnDecrements[0]);
+        render(<ShoppingCard decrement={fakeDecrement} plants={data}/>)
+
         await user.click(btnDecrements[1]);
+        render(<ShoppingCard decrement={fakeDecrement} plants={data}/>)
        
         expect(fakeDecrement).toBeCalledTimes(2)
-        expect(screen.getByTestId('allSum')).toHaveTextContent(`${allPrice}`)
+
+
+        const h1s = screen.getAllByTestId('allSum')
+        expect(h1s[2]).toHaveTextContent(`${allPrice}`)
 
        
 
@@ -193,11 +204,41 @@ describe('testing shopping gard component',()=>{
         const user = userEvent.setup()
       
         render(<ShoppingCard plants={plants2}/>)
+
         const input = screen.getByTestId('inp');
 
         await user.type(input, "text");
 
         expect( input.getAttribute('value')).toEqual('4')
+
+    })
+
+
+    test('change input defaultValue after click increment ', async ()=>{
+        const dataPlants = [
+            {
+                picture:aglonema,
+                name:'aglonema',
+                price:25,
+                count:4
+            }
+        ]
+
+        const user = userEvent.setup()
+
+        const increment = jest.fn((index)=>{
+            dataPlants[index].count = dataPlants[index].count+1
+        })
+        const {rerender} = render(<ShoppingCard increment={increment} plants={dataPlants}/>)
+
+        const input = screen.getByTestId('inp');
+        const incrementBtn = screen.getByText('+')
+
+        expect(input.getAttribute('value')).toBe('4');
+
+        await user.click(incrementBtn);
+
+        expect(input.getAttribute('value')).toBe('5');
 
     })
 

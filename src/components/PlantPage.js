@@ -1,10 +1,11 @@
 import { useSpring, animated } from '@react-spring/web'
 import Chinese from '../img/png/aglonema.png'
 import '../styles/PlantPage.css' 
+import { useLocation } from 'react-router-dom'
 
-function FlowerPage(props){
-
-    const {imgPlant,name,price} = props
+function FlowerPage(){
+    const location = useLocation()
+    const {imgPlant,name,price} = location.state
     
     const [itemStyle, setItemStyle] = useSpring(() => ({boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'}));
     const [BtnStyle,setBtnStyle] = useSpring(()=> ({boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'}))
@@ -36,19 +37,22 @@ function FlowerPage(props){
             
                 <animated.div   className='item' style={itemStyle}> 
                 
-                    <img src={Chinese} alt='plant' className='img_plant'></img>
+                    <img src={imgPlant} alt='plant' className='img_plant'></img>
                     <div className='Info'>
                         <div className='right_part'>
+                            <div className='forPosition'>
                             <animated.h1
                                 style={textStyle} 
                                 className='text'
-                            >sdfsdfdsfsd
+                            >
+                                {name}
                             </animated.h1>
 
                             <animated.h3
                                 style={textStyle}
                                 className='text'
-                            >sdfsddfsdf
+                            >
+                                {price}
                             </animated.h3>
 
                             <div className='around_btn'
@@ -65,6 +69,7 @@ function FlowerPage(props){
                                     style={BtnStyle}
                                     className='btn_buy'
                                     >BUY</animated.button>
+                            </div>
                             </div>
                         </div>
                     </div>
