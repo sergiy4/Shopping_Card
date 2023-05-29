@@ -5,8 +5,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
-function Header(){
+function Header(props){
 
+    const {plants} = props
     const [styleName, set] = useSpring(() => ({textShadow:'0px 0px 0px  rgb(0, 0, 0)',top:'0%',left:'0%'}));
 
     const data = [
@@ -15,7 +16,7 @@ function Header(){
             link:'/shop'
         },
         {
-            name:'Shopping Card',
+            name:`Shopping Card ${plants.length}`,
             link:'/shopping_card'
         }
     ]
@@ -82,5 +83,5 @@ function Header(){
     )
 }
 
-// 
+
 export default Header

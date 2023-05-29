@@ -18,7 +18,8 @@ export function App() {
   const delPlant = (id) =>{
     setDataPlants(prevVal => prevVal.filter(item => item.id !== id))
   }
-  
+
+ 
   const increment = (id)=>{
    
     let newA = dataPlants.map((item)=>{
@@ -97,7 +98,7 @@ export function App() {
   }
   return (
     <>
-    <Header/>
+    <Header plants={dataPlants}/>
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/shop'>
