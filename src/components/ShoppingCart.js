@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react'
 import '../styles/ShoppingCard.css'
-import { animated, useSprings, useSpring } from '@react-spring/web'
+import { animated, useSprings} from '@react-spring/web'
 
 function ShoppingCard(props){
 
     const {increment,decrement,plants,handleChange,delPlant} = props
     const [sum,setSum] = useState(0)
-    const [btnClick, setBtnClick] = useState(false)
+   
 
    
     useEffect(()=>{
         sumCalc()
-    },[plants,btnClick])
+    },[plants])
 
     const sumCalc = () =>{
         let s = 0;
@@ -23,6 +23,7 @@ function ShoppingCard(props){
         setSum(s)
     }
 
+    // animation
     const [index, setIndex] = useState(null);
     const [btnIndex,setBtnIndex] = useState(null)
     const springs = useSprings(
@@ -44,18 +45,18 @@ function ShoppingCard(props){
         ))
     )
 
-
-
     const buttonStyles = plants.map((_, i) => ({
         boxShadow: i === btnIndex ? '15px 15px 0px 0px rgb(0, 0, 0)' : '0px 0px 0px 0px rgb(0, 0, 0)',
         top: i === btnIndex ? '-2.7%' : '0%',
         left: i === btnIndex ? '-2.7%' : '0%',
-      }));
-      
+    }))
+    
     const btnSprings = useSprings(
         plants.length,
         buttonStyles
-    );
+    )
+
+
     return(
         <main className='Shopping_card_main'>
             
@@ -63,7 +64,7 @@ function ShoppingCard(props){
                 <div className='Around_shopping_cards'>
             {springs.map(
                 (
-                    // item,i
+                   
                     {boxShadow, top ,left},
                     i
                 )=>(
@@ -97,7 +98,7 @@ function ShoppingCard(props){
                                 <button
                                 className='btn_Card_shopping'
                                     data-testid = '+'
-                                    // item.id
+                                   
                                     onClick={()=>{increment(plants[i].id)}}
 
                                 >+</button>
@@ -123,7 +124,7 @@ function ShoppingCard(props){
                                     }}
 
                                     onChange={(e)=>{
-                                         // item.id
+                                       
                                         handleChange(e,plants[i].id)
                                     }}
                                         
@@ -132,7 +133,7 @@ function ShoppingCard(props){
                                 
                                 <button
                                 className='btn_Card_shopping'
-                                 // item.id
+                               
                                     onClick={()=>{decrement(plants[i].id)}}
                                 >-</button>
                             </div>
@@ -141,7 +142,7 @@ function ShoppingCard(props){
                         <div className='around_delete_btn'
                          onMouseEnter={() => {
                             setBtnIndex(i);
-                         //    handleMouseEnter();
+                       
                           }}
                           onMouseLeave={()=>{
                              setBtnIndex(null);

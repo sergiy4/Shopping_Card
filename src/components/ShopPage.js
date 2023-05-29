@@ -1,9 +1,8 @@
-import { useRef, useState } from "react"
+import {  useState } from "react"
 import { plantsData } from "../data/PlantsListData"
-import { useSpring, useSprings, animated } from "@react-spring/web"
+import { useSprings, animated } from "@react-spring/web"
 import '../styles/ShopPage.css'
 
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { Link } from "react-router-dom"
 
 function ShopPage(props){
@@ -17,7 +16,7 @@ function ShopPage(props){
         id:0
     })
     const {setDataPlants,dataPlants} = props
-    const {present,setPresent} = useState(false)
+  
 
 
     
@@ -25,11 +24,8 @@ function ShopPage(props){
     const [index, setIndex] = useState(null);
     const [viewBtn, setViewBtn] = useState(false);
     const [BuyBtn, setBuyBtn] = useState(false);
-    const [on,setOn] = useState(true)
-    // const triggerRef = useRef();
-    // const dataRef = useIntersectionObserver(triggerRef,{
-    //     freezeOnceVisible: true
-    // })
+   
+
     const springs = useSprings(
         plantsData.length,
         plantsData.map((item,i)=>(

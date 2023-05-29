@@ -5,37 +5,8 @@ import { Link } from "react-router-dom";
 
 function Home(){
 
-    const styles = useSpring({
-        from: {
-          opacity: 0.5,
-            perspective:'5000px',
-          rotateY:'0deg', 
-          rotateX:'0deg', 
-          rotateZ:'0deg',
-      
-
-        },
-        to: {
-          opacity: 1,
-            perspective:'5000px',
-          rotateY:'-30deg', 
-          rotateX:'50deg', 
-          rotateZ:'20deg',
-     
-
-        },
-        config: {
-            mass: 5,
-            tension:170,
-            friction: 100,
-          
-            clamp:true
-        },
-        
-    })
-
-
-    const [textStyle, set] = useSpring(() => ({translateZ:'0px',textShadow:'0px 0px 0px  rgb(0, 0, 0)',top:'0%',left:'0%'}));
+//    Animation
+    const [textStyle, set] = useSpring(() => ({textShadow:'0px 0px 0px  rgb(0, 0, 0)',top:'0%',left:'0%'}));
     const [btnStyle, setShadow] = useSpring(() => ({boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)', top:'0%',left:'0%'}));
 
     return(
@@ -44,22 +15,19 @@ function Home(){
 
            
                 <div className="block"  >
-                    <animated.div >{/**/}
+                    <animated.div >
                         <animated.h1  style={textStyle}  className="Main_text"><animated.span  className="Main_span first_spain">Good</animated.span> <br/> Plant - good <br/><span className="Main_span">Mood</span></animated.h1>
                         <div className="Around_shop_button"
-                         onMouseEnter={()=>{
-                            setShadow({boxShadow:'15px 15px 0px 0px rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
-                            // 
-                            set({textShadow:'5px 5px 0px  rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
-                            // setTextShadow({textShadow:'6px 3px 1px rgb(0, 0, 0)'})
-                        }
-                        }
+
+                            onMouseEnter={()=>{
+                                setShadow({boxShadow:'15px 15px 0px 0px rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
+                                set({textShadow:'5px 5px 0px  rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
+                            }}
                         
-                        onMouseLeave={()=>{
-                            setShadow({boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'})
-                            set({translateZ:'0px',textShadow:'0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'})
-                        }
-                        }
+                            onMouseLeave={()=>{
+                                setShadow({boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'})
+                                set({translateZ:'0px',textShadow:'0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'})
+                            }}
                         >
                         <Link to='/shop' >
                         

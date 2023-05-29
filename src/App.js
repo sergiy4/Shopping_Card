@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import './styles/App.css';
-import { Link, HashRouter, BrowserRouter, Route, Routes,useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from './components/HomePage';
 import Header from './components/HeaderComponent';
 import ShopPage from './components/ShopPage';
