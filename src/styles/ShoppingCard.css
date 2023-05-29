@@ -11,67 +11,88 @@
     height: 90%;
     width: 70%;
     display: flex;
-    /* flex-direction: column; */
+ 
     justify-content:space-around;
     align-items: center;
     
   
 }
+.around_shopping_card{
+    height: 30%;
+    display: flex;
+    gap:5%;
+   
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
 .Shopping_card{
+    position: relative;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
     background-color: rgb(37, 255, 164);
     color:rgb(11, 173, 87);
     border: 3px solid black;
-   
-    height: 30%;
     display: flex;
     gap:5%;
+   
 }
-.Around_shopping_card{
+.Around_shopping_cards{
     border: 3px solid black;
-    /* padding-top: 30px; */
+   
     height: 90% ;
-    width: 60%;
+    width: 70%;
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+   
+
+  
     
     gap: 30px;
     overflow-y:auto;
     padding: 20px;
+    padding-left: 40px;
     
 }
 .Shopping_Card_img{
-    /* height: 100%; */
+    
+   
     width: 30%;
     object-fit: contain;
     background-color: #fff;
     border-right: 3px solid black;
 }
-/* .info_block{
-    display: flex;
 
-} */
-.input_and_buttons{
-    /* background-color: #fff; */
-}
+
 .btn_Card_shopping{
     height: 100%;
     width: 10%;
-
+    border: none;
     background-color: #fff;
 }
 .inp_card{
     width: 20%;
     height: 80%;
+    border: none;
+    border-left:1px  solid black;
+    border-right: 1px solid black;
+    
 }
 .det_Btn{
-    height: 40%;
-    width: 20%;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    letter-spacing: 4px;
+    border-radius:0 ;
+    cursor: pointer;
+}
+.around_delete_btn{
     margin-right: 20px;
-    /* justify-self: center; */
+  
+    height: 43%;
+    width: 20%;
+    padding-right:15px ;
+    padding-bottom: 15px;
     align-self: center;
 }
 .right_part_shopping{
@@ -81,4 +102,129 @@
     width: 40%;
     gap: 30px;
 
+}
+.all_Sum_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1000px){
+    /* .Shopping_card_main{
+        height: 85%;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+    .Shopping_card_block{
+    
+        background-color: rgb(37, 255, 164);
+        height: 90%;
+        width: 100%;
+        display: flex;
+     
+        justify-content:space-around;
+        align-items: center;
+        
+      
+    }
+    /* .around_shopping_card{
+        height: 20%;
+        display: flex;
+        gap:5%;
+       
+        padding-right: 15px;
+        padding-bottom: 15px;
+    } */
+    .Shopping_card{
+        
+        height: 100%;
+        width: 100%;
+        gap:4%;
+        font-size: 10px;
+       
+    }
+    .Around_shopping_cards{
+        border: 3px solid black;
+       
+        height: 90% ;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+
+        margin-left: 20px;
+        gap: 20px;  
+        overflow-y:auto;
+        padding: 5px;
+        padding-left: 30px;
+        
+    }
+    .Shopping_Card_img{
+        
+        
+        width: 20%;
+  
+    }
+    
+    
+    .btn_Card_shopping{
+      
+        width: 20%;
+      
+    }
+    .inp_card{
+        width: 20%;
+        height: 80%;
+       
+    }
+    .det_Btn{
+       
+        height: 100%;
+        width: 120%;
+        letter-spacing: 2px;
+        font-size: 10px;
+      
+    }
+    .around_delete_btn{
+        margin-right: 10px;
+      
+      
+    }
+    .right_part_shopping{
+      
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+
+        height: 100%;
+        width: 100%;
+        gap: 20px;
+    
+    }
+    .all_Sum_div{
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}
+@media screen and (max-width: 500px){
+    .det_Btn{
+       
+        height: 100%;
+        width: 120%;
+        letter-spacing: 2px;
+        font-size: 7px;
+      
+    }
+    .right_part_shopping{
+      
+        gap: 10px;
+    
+    }
 }

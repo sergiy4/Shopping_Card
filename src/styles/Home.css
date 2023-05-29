@@ -1,6 +1,6 @@
 
 
-  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;900&display=swap');
 
 /*    background-color: rgb(255, 37, 88);
     color:rgb(199, 15, 70); */
@@ -8,7 +8,6 @@
 .Start_screen{
     
     background-color: rgb(37, 255, 164);
-    /* background-color: rgb(255, 244, 231); */
     height: 85%;
     display: flex;
     
@@ -32,12 +31,11 @@
     position: relative;
 
     font-size: 30px;
-
     background-color: rgb(37, 255, 164);
     color:rgb(11, 173, 87);
-    /* color:rgb(15, 199, 101); */
+
     transform-style: preserve-3d;
-    /* text-shadow: 6px 3px 1px rgb(0, 0, 0) */
+  
 }
 .Around_shop_button{
     width: 202px;
@@ -47,7 +45,7 @@
    padding-right: 10px;
 }
 .Shop_Btn{
-    /* margin-top: 40px; */
+  
     height: 90px;
     width: 200px;
     transform-style: preserve-3d;
@@ -57,7 +55,7 @@
    letter-spacing: 6px;
    background-color: #ddd;
    position: relative;
-   /* position: absolute; */
+  
 }
 
 .block{
@@ -65,10 +63,35 @@
     z-index: 1;
   
 }
-/* .rel{
-    background-color: aqua;
-    position: relative;
-    height: 100%;
-    width: 100%;
-
-} */
+@media screen and (max-width: 1000px){
+    .Home_text_block{
+      
+        font-size: 15px;
+        background-color: rgb(37, 255, 164);
+        color:rgb(11, 173, 87);
+    
+        transform-style: preserve-3d;
+       
+    }
+    .Around_shop_button{
+        width: 110px;
+       
+        padding-bottom: 18px;
+        margin-top: 40px;
+        
+       padding-right: 10px;
+    }
+    .Shop_Btn{
+      
+        height: 70px;
+        width: 100px;
+        transform-style: preserve-3d;
+        z-index: 999;
+       cursor: pointer;
+       font-size: 15px;
+       letter-spacing: 6px;
+       background-color: #ddd;
+       position: relative;
+      
+    }
+}

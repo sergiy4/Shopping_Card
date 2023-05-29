@@ -50,7 +50,7 @@ function Home(){
                          onMouseEnter={()=>{
                             setShadow({boxShadow:'15px 15px 0px 0px rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
                             // 
-                            set({translateZ:'1000px',textShadow:'9px 5px 0px  rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
+                            set({textShadow:'5px 5px 0px  rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
                             // setTextShadow({textShadow:'6px 3px 1px rgb(0, 0, 0)'})
                         }
                         }

@@ -75,3 +75,57 @@
     height: 100%;
     width: 120px;
 }
+
+@media screen and (max-width: 1000px){
+    */
+    .item{
+        position: relative;
+        height:100%;
+        width: 100%;
+        
+        
+       
+        border: 3px solid black ;
+    }
+    .Around_item{
+        height: 80%;
+        width: 90%;
+       
+        padding-right: 9px;
+        padding-bottom: 9px;
+    }
+
+    .btn_buy{
+       
+        height: 50px;
+        width: 100px;
+      
+        letter-spacing: 4px;
+    }
+    .Info{
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 50%;
+        
+        
+    }
+    .right_part{
+        
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+ 
+ 
+    .around_btn{
+        position: relative;
+        padding-right: 10px;
+        padding-bottom: 10px;
+       
+        height: 100%;
+        width: 100px;
+    }
+}

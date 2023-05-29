@@ -5,17 +5,16 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(226, 255, 237);
+    overflow-x:hidden ;
 }
 
 .area_cards{
-    /* display: flex;
-    flex-wrap: wrap; */
-   padding: 100px;
-    /* background-color: aqua; */
+   
+   padding: 100px; 
     display: grid;
     grid-template-columns: 1fr 1fr ;
     gap:70px
-    /* width: 70%; */
+ 
 }
 
 .card{
@@ -25,7 +24,7 @@
     border: 3px solid black;
     box-sizing:border-box;
     overflow: hidden;
-    /* box-shadow: 15px 15px 0px 0px rgb(0,0,0); */
+   
 }
 .img_card{
     height: 70%;
@@ -66,4 +65,55 @@
     width: 100px;
     letter-spacing: 4px;
     border-radius: 0;
+}
+
+@media screen and (max-width: 1000px){
+    .area_cards{
+   
+        padding: 100px; 
+        display: grid;
+        grid-template-columns: 1fr ;
+        gap:70px
+      
+    }
+    .card{
+        /* position: relative;
+        height: 100%;
+        width: 100% ;
+        border: 3px solid black;
+        box-sizing:border-box;
+        overflow: hidden; */
+        height: 450px;
+        width: 300px ;
+        font-size: 14px;
+    }
+
+    .img_card{
+        height: 70%;
+        width: 100%;
+        object-fit: contain;
+       
+        box-sizing: border-box;
+        background-color: #fff;
+    }
+    .info_part_card{
+       
+        height: 30%;
+       
+        gap:1px;
+    }
+
+    .Card_Btn{
+      
+        height:40px;
+        width: 60px;
+        /* s */
+   
+    }
+    .buttons{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        
+    }
 }

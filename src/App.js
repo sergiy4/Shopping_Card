@@ -99,7 +99,7 @@ export function App() {
       <Route path='/shop'>
         
         <Route index element={<ShopPage dataPlants={dataPlants} setDataPlants={setDataPlants}/>}/>
-        <Route path='/shop/:id' element={<PlantPage/>}/>
+        <Route path='/shop/:id' element={<PlantPage setDataPlants={setDataPlants} dataPlants={dataPlants}/>}/>
       </Route> 
       <Route path='/shopping_card' element={<ShoppingCard plants={dataPlants} increment={increment} decrement={decrement} handleChange={handleChange}/>}/>
 

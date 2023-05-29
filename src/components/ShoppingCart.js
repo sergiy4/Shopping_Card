@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react'
-import aglonema from '../img/png/aglonema.png'
-import AsparagusFern from '../img/png/AsparagusFern.jpg'
-import CalatheaOrnata from '../img/png/CalatheaOrnata.png'
-import Orchid from '../img/png/Orchid.png'
-import PeaceLily from '../img/png/PeaceLily.png'
 import '../styles/ShoppingCard.css'
+import { animated, useSprings, useSpring } from '@react-spring/web'
 
 function ShoppingCard(props){
 
@@ -15,9 +11,6 @@ function ShoppingCard(props){
    
     useEffect(()=>{
         sumCalc()
-
-       
-
     },[plants,btnClick])
 
     const sumCalc = () =>{
@@ -30,29 +23,110 @@ function ShoppingCard(props){
         setSum(s)
     }
 
+    const [index, setIndex] = useState(null);
+    const [btnIndex,setBtnIndex] = useState(null)
+    const springs = useSprings(
+        
+        plants.length,
+        plants.map((item,i)=>(
+            {   
+                boxShadow: i === index? '10px 10px 0px 0px rgb(0, 0, 0)':'0px 0px 0px 0px rgb(0, 0, 0)' ,
+                top: i=== index? '-3%':'0%' ,
+                left: i=== index? '-3%':'0%',
+                from:{
+                  
+                    boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',
+                    top:'0%',
+                    left:'0%',
+                },
 
-   
+            }
+        ))
+    )
 
+    console.log(plants)
+    console.log(springs)
+
+    
+        
+    // const [btnStyle,setBtnStyle] = useSpring(()=> ({
+        
+    //     boxShadow: '0px 0px 0px 0px rgb(0, 0, 0)',
+    //     top: '0%' ,
+    //     left: '0%' ,
+    // }))
+
+    // const handleMouseEnter = () =>{
+    //     setBtnStyle({
+    //         boxShadow:'15px 15px 0px 0px rgb(0, 0, 0)',
+    //         top:'-2.7%',
+    //         left:'-2.7%' 
+    //     })
+    // }
+
+    // const handleMouseLeave = ()=>{
+    //     setBtnStyle({
+    //         boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',
+    //         top:'0%',
+    //         left:'0%'
+    //     })
+    // }
+
+
+
+    const buttonStyles = plants.map((_, i) => ({
+        boxShadow: i === btnIndex ? '15px 15px 0px 0px rgb(0, 0, 0)' : '0px 0px 0px 0px rgb(0, 0, 0)',
+        top: i === btnIndex ? '-2.7%' : '0%',
+        left: i === btnIndex ? '-2.7%' : '0%',
+      }));
+      
+      const btnSprings = useSprings(
+        plants.length,
+        buttonStyles
+      );
     return(
         <main className='Shopping_card_main'>
             
             <div className='Shopping_card_block'>
-                <div className='Around_shopping_card'>
-            {plants.map((item,i)=>(
-                
-                    <div key={i} className='Shopping_card'>
+                <div className='Around_shopping_cards'>
+            {springs.map(
+                (
+                    // item,i
+                    {boxShadow, top ,left},
+                    i
+                )=>(
+                    <div className='around_shopping_card'
+                        key={i} 
+                        onMouseEnter={()=>{
+                            
+                            console.log(i);
+                            
+                            setIndex(i)
+                            console.log(index)
+                        }}
+                        onMouseLeave={()=>{
+                            setIndex(null)
+                        }}
+                    >
+                    <animated.div 
+                       
+                        className='Shopping_card'
+                        style={{ boxShadow,top,left}}
+                    >
                         
                       
-                    <img className='Shopping_Card_img' alt='plant' src={item.picture}></img>
+                        <img className='Shopping_Card_img' alt='plant' src={plants[i].picture}></img>
 
                         <div className='right_part_shopping'>
-                            <p>{item.name}</p>
+                            <p>{plants[i].name}</p>
+                            <p>Price: {plants[i].price} $</p>
                             
                             <div className='input_and_buttons'>
                                 <button
                                 className='btn_Card_shopping'
                                     data-testid = '+'
-                                    onClick={()=>{increment(item.id)}}
+                                    // item.id
+                                    onClick={()=>{increment(plants[i].id)}}
 
                                 >+</button>
 
@@ -77,7 +151,8 @@ function ShoppingCard(props){
                                     }}
 
                                     onChange={(e)=>{
-                                        handleChange(e,item.id)
+                                         // item.id
+                                        handleChange(e,plants[i].id)
                                     }}
                                         
                                 >
@@ -85,17 +160,36 @@ function ShoppingCard(props){
                                 
                                 <button
                                 className='btn_Card_shopping'
-                                    onClick={()=>{decrement(item.id)}}
+                                 // item.id
+                                    onClick={()=>{decrement(plants[i].id)}}
                                 >-</button>
                             </div>
                            
                         </div>
-                        <button className='det_Btn'>Delete</button>
+                        <div className='around_delete_btn'
+                         onMouseEnter={() => {
+                            setBtnIndex(i);
+                         //    handleMouseEnter();
+                          }}
+                          onMouseLeave={()=>{
+                             setBtnIndex(null);
+                          }}
+                        >
+                        <animated.button
+                         style={btnSprings[i]} // Використовуємо стилі з btnSprings для кожної окремої кнопки
+                        
+                           className='det_Btn'>DELETE</animated.button>
+                           </div>
+                        </animated.div>
                     </div>
                 ))}
                 
                 </div>
-                <h1 data-testid='allSum'>{sum}</h1>
+                <div className='all_Sum_div'>
+                    <h1>All sum:</h1>
+                    <h1 data-testid='allSum'>{sum}</h1>
+                </div>
+                
             </div>
         </main>
     )

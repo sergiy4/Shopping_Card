@@ -3,13 +3,14 @@ import Chinese from '../img/png/aglonema.png'
 import '../styles/PlantPage.css' 
 import { useLocation } from 'react-router-dom'
 
-function FlowerPage(){
+function FlowerPage(props){
     const location = useLocation()
-    const {imgPlant,name,price} = location.state
-    
+    const {picture,name,price,count,id} = location.state
+    console.log(id)
+    const {setDataPlants,dataPlants} = props
+    // animation
     const [itemStyle, setItemStyle] = useSpring(() => ({boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'}));
     const [BtnStyle,setBtnStyle] = useSpring(()=> ({boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'}))
-    
     const [textStyle, set] = useSpring(() => ({textShadow:'0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'}));
     const handleMouseEnter = () =>{
         setItemStyle({
@@ -18,7 +19,6 @@ function FlowerPage(){
             left:'-2.7%' 
         })
     }
-
     const handleMouseLeave = ()=>{
         setItemStyle({
             boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',
@@ -26,6 +26,7 @@ function FlowerPage(){
             left:'0%'
         })
     }
+
     return(
 
        <main className='plant_main'>
@@ -37,7 +38,7 @@ function FlowerPage(){
             
                 <animated.div   className='item' style={itemStyle}> 
                 
-                    <img src={imgPlant} alt='plant' className='img_plant'></img>
+                    <img src={picture} alt='plant' className='img_plant'></img>
                     <div className='Info'>
                         <div className='right_part'>
                             <div className='forPosition'>
@@ -58,7 +59,7 @@ function FlowerPage(){
                             <div className='around_btn'
                                 onMouseEnter={()=>{
                                     setBtnStyle({boxShadow:'10px 10px 0px 0px rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
-                                    set({textShadow:'3px 2px 0px rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
+                                    set({textShadow:'2px 2px 0px rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
                                 }}   
                                 onMouseLeave={()=>{
                                     setBtnStyle({boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'})
@@ -68,6 +69,42 @@ function FlowerPage(){
                                 <animated.button  
                                     style={BtnStyle}
                                     className='btn_buy'
+                                    onClick={()=>{
+
+                                        let newEl = {
+                                            picture:picture,
+                                            name:name,
+                                            price:price,
+                                            count:count+1,
+                                            id:id
+                                        }
+
+                                        if(dataPlants.length>=1){
+
+                                           let  e;
+                                           let  newAr =  dataPlants.map(el =>{
+                                            
+                                                if(el.id===id){
+                                                    e = {
+                                                        ...el,
+                                                        count:el.count+1
+                                                    }
+                                                    return e
+                                                }
+                                                else{
+                                                    return el
+                                                }
+                                            })
+
+                                            e? setDataPlants(newAr) : setDataPlants(prevVal=>prevVal.concat(newEl))
+
+                                        }else{
+                                            
+                                            let arr = [newEl]
+                                            setDataPlants(arr);
+                                        }
+                                        
+                                    }}
                                     >BUY</animated.button>
                             </div>
                             </div>

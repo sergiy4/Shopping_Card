@@ -18,6 +18,9 @@ function ShopPage(props){
     })
     const {setDataPlants,dataPlants} = props
     const {present,setPresent} = useState(false)
+
+
+    
     // Animation hook
     const [index, setIndex] = useState(null);
     const [viewBtn, setViewBtn] = useState(false);
@@ -88,9 +91,12 @@ function ShopPage(props){
                                     }}
                                 >
                                 <Link to={`/shop/${plantsData[i].name}`} state={{
-                                    imgPlant:plantsData[i].picture,
+                                    picture:plantsData[i].picture,
                                     name:plantsData[i].name,
-                                    price:plantsData[i].price
+                                    price:plantsData[i].price,
+                                    count:dataOnePlant.count,
+                                    id:i
+                                   
                                 }}>
                                 <animated.button 
                                     className="Card_Btn"
@@ -129,9 +135,7 @@ function ShopPage(props){
 
                                         if(dataPlants.length>=1){
 
-                                            let  e ;
-                                            
-
+                                           let  e;
                                            let  newAr =  dataPlants.map(el =>{
                                             
                                                 if(el.id===i){
