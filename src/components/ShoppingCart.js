@@ -4,7 +4,7 @@ import { animated, useSprings, useSpring } from '@react-spring/web'
 
 function ShoppingCard(props){
 
-    const {increment,decrement,plants,handleChange} = props
+    const {increment,decrement,plants,handleChange,delPlant} = props
     const [sum,setSum] = useState(0)
     const [btnClick, setBtnClick] = useState(false)
 
@@ -44,34 +44,6 @@ function ShoppingCard(props){
         ))
     )
 
-    console.log(plants)
-    console.log(springs)
-
-    
-        
-    // const [btnStyle,setBtnStyle] = useSpring(()=> ({
-        
-    //     boxShadow: '0px 0px 0px 0px rgb(0, 0, 0)',
-    //     top: '0%' ,
-    //     left: '0%' ,
-    // }))
-
-    // const handleMouseEnter = () =>{
-    //     setBtnStyle({
-    //         boxShadow:'15px 15px 0px 0px rgb(0, 0, 0)',
-    //         top:'-2.7%',
-    //         left:'-2.7%' 
-    //     })
-    // }
-
-    // const handleMouseLeave = ()=>{
-    //     setBtnStyle({
-    //         boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',
-    //         top:'0%',
-    //         left:'0%'
-    //     })
-    // }
-
 
 
     const buttonStyles = plants.map((_, i) => ({
@@ -80,10 +52,10 @@ function ShoppingCard(props){
         left: i === btnIndex ? '-2.7%' : '0%',
       }));
       
-      const btnSprings = useSprings(
+    const btnSprings = useSprings(
         plants.length,
         buttonStyles
-      );
+    );
     return(
         <main className='Shopping_card_main'>
             
@@ -177,7 +149,9 @@ function ShoppingCard(props){
                         >
                         <animated.button
                          style={btnSprings[i]} // Використовуємо стилі з btnSprings для кожної окремої кнопки
-                        
+                        onClick={()=>{
+                            delPlant(plants[i].id)
+                        }}
                            className='det_Btn'>DELETE</animated.button>
                            </div>
                         </animated.div>

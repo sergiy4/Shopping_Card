@@ -15,6 +15,10 @@ export function App() {
 
   const [dataPlants ,setDataPlants] = useState([])
   
+  const delPlant = (id) =>{
+    setDataPlants(prevVal => prevVal.filter(item => item.id !== id))
+  }
+  
   const increment = (id)=>{
    
     let newA = dataPlants.map((item)=>{
@@ -101,17 +105,14 @@ export function App() {
         <Route index element={<ShopPage dataPlants={dataPlants} setDataPlants={setDataPlants}/>}/>
         <Route path='/shop/:id' element={<PlantPage setDataPlants={setDataPlants} dataPlants={dataPlants}/>}/>
       </Route> 
-      <Route path='/shopping_card' element={<ShoppingCard plants={dataPlants} increment={increment} decrement={decrement} handleChange={handleChange}/>}/>
+      <Route path='/shopping_card' element={<ShoppingCard plants={dataPlants} increment={increment} decrement={decrement} handleChange={handleChange} delPlant={delPlant}/>}/>
 
     
     </Routes>
-    {/* <Header/> */}
-    {/* <ShopPage dataPlants={dataPlants} setDataPlants={setDataPlants} /> */}
-    {/* <ShoppingCard /> */}
+    
     </>
   )
-  // plants={dataPlants} increment={increment} decrement={decrement} handleChange={handleChange}
-};
+}
 
 
 
