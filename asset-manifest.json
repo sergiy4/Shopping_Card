@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Shopping_Card/static/css/main.eec729cb.css",
-    "main.js": "/Shopping_Card/static/js/main.d488bcae.js",
+    "main.css": "/Shopping_Card/static/css/main.df13883e.css",
+    "main.js": "/Shopping_Card/static/js/main.cb0d0d04.js",
     "static/media/aglonema.png": "/Shopping_Card/static/media/aglonema.737f368c8488294c441f.png",
     "static/media/SnakePlant.png": "/Shopping_Card/static/media/SnakePlant.e8de3856898bf2fc1bf0.png",
     "static/media/CalatheaOrnata.png": "/Shopping_Card/static/media/CalatheaOrnata.5037e7f5ae5d7a261d30.png",
@@ -14,11 +14,11 @@
     "static/media/PeaceLily.png": "/Shopping_Card/static/media/PeaceLily.c7b4270d90f16d2c42d7.png",
     "static/media/AsparagusFern.jpg": "/Shopping_Card/static/media/AsparagusFern.f5964131f9b7c387363a.jpg",
     "index.html": "/Shopping_Card/index.html",
-    "main.eec729cb.css.map": "/Shopping_Card/static/css/main.eec729cb.css.map",
-    "main.d488bcae.js.map": "/Shopping_Card/static/js/main.d488bcae.js.map"
+    "main.df13883e.css.map": "/Shopping_Card/static/css/main.df13883e.css.map",
+    "main.cb0d0d04.js.map": "/Shopping_Card/static/js/main.cb0d0d04.js.map"
   },
   "entrypoints": [
-    "static/css/main.eec729cb.css",
-    "static/js/main.d488bcae.js"
+    "static/css/main.df13883e.css",
+    "static/js/main.cb0d0d04.js"
   ]
 }
