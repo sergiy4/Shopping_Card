@@ -70,12 +70,14 @@ function ShoppingCard(props){
                 )=>(
                     <div className='around_shopping_card'
                         key={i} 
-                        onMouseEnter={()=>{
-                            
-                            console.log(i);
-                            
+                        onTouchStart={()=>{
                             setIndex(i)
-                            console.log(index)
+                        }}
+                        onTouchEnd={()=>{
+                            setIndex(null)
+                        }}
+                        onMouseEnter={()=>{
+                            setIndex(i)
                         }}
                         onMouseLeave={()=>{
                             setIndex(null)
@@ -106,6 +108,7 @@ function ShoppingCard(props){
                                 <input 
                                     className='inp_card'
 
+                                    maxLength='2'
                                     data-testid='inp'
                                     value={plants[i].count} 
                                     type="text" inputMode="numeric" 
@@ -140,19 +143,28 @@ function ShoppingCard(props){
                            
                         </div>
                         <div className='around_delete_btn'
-                         onMouseEnter={() => {
-                            setBtnIndex(i);
-                       
-                          }}
-                          onMouseLeave={()=>{
-                             setBtnIndex(null);
-                          }}
+
+                            onTouchStart={()=>{
+                                setBtnIndex(i);
+                            }}
+                            onTouchEnd={()=>{
+                                setBtnIndex(null);
+                            }}
+                            onMouseEnter={() => {
+                                setBtnIndex(i);
+                        
+                            }}
+                            onMouseLeave={()=>{
+                                setBtnIndex(null);
+                            }}
                         >
                         <animated.button
-                         style={btnSprings[i]} // Використовуємо стилі з btnSprings для кожної окремої кнопки
-                        onClick={()=>{
-                            delPlant(plants[i].id)
-                        }}
+                            style={btnSprings[i]} // Використовуємо стилі з btnSprings для кожної окремої кнопки
+
+                            onClick={()=>{
+                                delPlant(plants[i].id)
+                            }}
+                            
                            className='det_Btn'>DELETE</animated.button>
                            </div>
                         </animated.div>

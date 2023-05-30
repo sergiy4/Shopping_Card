@@ -7,7 +7,8 @@
 }
 .Shopping_card_block{
 
-    background-color: rgb(37, 255, 164);
+    background-color: rgb(88, 196, 136);
+    
     height: 90%;
     width: 70%;
     display: flex;
@@ -29,8 +30,8 @@
     position: relative;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
-    background-color: rgb(37, 255, 164);
-    color:rgb(11, 173, 87);
+    background-color: rgb(88, 196, 136);
+    color:rgb(54, 163, 105);
     border: 3px solid black;
     display: flex;
     gap:5%;
@@ -96,7 +97,7 @@
     align-self: center;
 }
 .right_part_shopping{
-    /* margin-top: 20px; */
+ 
     padding-top: 20px;
     height: 100%;
     width: 40%;
@@ -111,16 +112,10 @@
 }
 
 @media screen and (max-width: 1000px){
-    /* .Shopping_card_main{
-        height: 85%;
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    } */
+
     .Shopping_card_block{
     
-        background-color: rgb(37, 255, 164);
+        background-color: rgb(88, 196, 136);
         height: 90%;
         width: 100%;
         display: flex;
@@ -130,14 +125,7 @@
         
       
     }
-    /* .around_shopping_card{
-        height: 20%;
-        display: flex;
-        gap:5%;
-       
-        padding-right: 15px;
-        padding-bottom: 15px;
-    } */
+
     .Shopping_card{
         
         height: 100%;

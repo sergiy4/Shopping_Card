@@ -2,12 +2,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;900&display=swap');
 
-/*    background-color: rgb(255, 37, 88);
-    color:rgb(199, 15, 70); */
     
 .Start_screen{
     
-    background-color: rgb(37, 255, 164);
+    /* background-color: rgb(37, 255, 164); */
+    background-color: rgb(88, 196, 136);
     height: 85%;
     display: flex;
     
@@ -31,8 +30,8 @@
     position: relative;
 
     font-size: 30px;
-    background-color: rgb(37, 255, 164);
-    color:rgb(11, 173, 87);
+    background-color: rgb(88, 196, 136);
+    color:rgb(54, 163, 105);
 
     transform-style: preserve-3d;
   
@@ -67,10 +66,7 @@
     .Home_text_block{
       
         font-size: 15px;
-        background-color: rgb(37, 255, 164);
-        color:rgb(11, 173, 87);
-    
-        transform-style: preserve-3d;
+      
        
     }
     .Around_shop_button{

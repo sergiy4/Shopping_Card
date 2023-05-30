@@ -27,6 +27,15 @@ function FlowerPage(props){
         })
     }
 
+    const setStyle = () =>{
+        setBtnStyle({boxShadow:'10px 10px 0px 0px rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
+        set({textShadow:'2px 2px 0px rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
+    }
+
+    const delStyle = () =>{
+        setBtnStyle({boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'})
+        set({textShadow:'0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'})
+    }
     return(
 
        <main className='plant_main'>
@@ -57,13 +66,17 @@ function FlowerPage(props){
                             </animated.h3>
 
                             <div className='around_btn'
+                                onTouchStart={()=>{
+                                    setStyle()
+                                }}
+                                onTouchEnd={()=>{
+                                    delStyle()
+                                }}
                                 onMouseEnter={()=>{
-                                    setBtnStyle({boxShadow:'10px 10px 0px 0px rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
-                                    set({textShadow:'2px 2px 0px rgb(0, 0, 0)',top:'-2.7%',left:'-2.7%'})
+                                    setStyle()
                                 }}   
                                 onMouseLeave={()=>{
-                                    setBtnStyle({boxShadow:'0px 0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'})
-                                    set({textShadow:'0px 0px 0px rgb(0, 0, 0)',top:'0%',left:'0%'})
+                                    delStyle()
                                 }}
                             >
                                 <animated.button  

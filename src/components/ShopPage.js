@@ -49,8 +49,7 @@ function ShopPage(props){
         ))
     )
 
-    
-
+   
     return(
        <main className="Shop_Main">
         <div className="area_cards">
@@ -71,7 +70,15 @@ function ShopPage(props){
 
                             <div className="buttons">
                                 <div className="btn_around"
-
+                                    
+                                    onTouchStart={()=>{
+                                        setIndex(i);
+                                        setViewBtn(true)
+                                    }}
+                                    onTouchEnd={()=>{
+                                        setIndex(null)
+                                        setViewBtn(false)
+                                    }}
                                     onMouseEnter={()=>{
                                         setIndex(i);
                                         setViewBtn(true)
@@ -80,10 +87,6 @@ function ShopPage(props){
                                     onMouseLeave={()=>{
                                         setIndex(null)
                                         setViewBtn(false)
-                                       
-                                        
-                                        
-                                        
                                     }}
                                 >
                                 <Link to={`/shop/${plantsData[i].name}`} state={{
@@ -103,16 +106,23 @@ function ShopPage(props){
                                 </div>
                                 <div
                                     className="btn_around"
-                                    onMouseEnter={()=>{
+                                    
+                                    onTouchStart={()=>{
                                         setIndex(i);
                                         setBuyBtn(true)
 
-                                       
+                                    }}
+                                    onTouchEnd={()=>{
+                                        setIndex(null)
+                                        setBuyBtn(false)
+                                    }}
+                                    onMouseEnter={()=>{
+                                        setIndex(null)
+                                        setBuyBtn(false)
                                     }}
                                     onMouseLeave={()=>{
                                         setIndex(null)
                                         setBuyBtn(false)
-                                       
                                     }}
                                 >
                                 <animated.button 
